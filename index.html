@@ -141,7 +141,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -173,6 +173,85 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/18/%E7%AE%97%E6%B3%9501/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Qihe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qihe">
+      <meta itemprop="description" content="这里是栖鹤的博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Qihe">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/07/18/%E7%AE%97%E6%B3%9501/" class="post-title-link" itemprop="url">一天一个算法之快速排序</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-07-18 16:49:25 / 修改时间：17:34:19" itemprop="dateCreated datePublished" datetime="2025-07-18T16:49:25+08:00">2025-07-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>快速排序基本思想：<br>通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
+<p>时间复杂度：平均时间复杂度<b>O(nlog<sup>n</sup>)</b> 最差情况下会变为<b>O(n<sup>2</sup>)</b></p>
+<p>基本思路如下:</p>
+<p>1.设置分界值,通过该分界值将数组分为两部分。</p>
+<p>2.将大于等于分界值数据集中在数组的右边，小于等于分界值数据集中在数组的左边。</p>
+<p>3.递归：将左边和右边的数据分别独立排序，对于左侧数组再取一次分界点，又将分为两个部分，右侧数组数据也做一样的处理，通过递归排好左侧 再排右侧。</p>
+<p>代码模板如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int q[N];</span><br><span class="line">const int N=1e5+10;</span><br><span class="line">void quicksort(int q[],int l,int r)&#123;</span><br><span class="line">    //若数组就一个数 直接返回数值</span><br><span class="line">    if(l&gt;=r&gt;) return;</span><br><span class="line">    //这里写l==r也可以 &gt;=也包含==的情况</span><br><span class="line">    //选取分界点</span><br><span class="line">    int x=q[l+r&gt;&gt;1];</span><br><span class="line">    //l+r&gt;&gt;1是选中间的点</span><br><span class="line">    int i=l-1,j=r+1;//防止边界问题</span><br><span class="line">    while(i&lt;j&gt;)&#123;</span><br><span class="line">        do i++;while(q[i]&lt;x);</span><br><span class="line">        do j--;while(q[j]&gt;x);</span><br><span class="line">        if(i&lt;j) swap(q[i],q[j])</span><br><span class="line">        quick_sort(q,l,j),quick_sort(q,J+1,r);//递归排序左右</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>cout&lt;&lt; over~ &lt;&lt; endl;</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
